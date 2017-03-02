@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+
+//추가하지 않으면, 배포 후 톰캣에서 BeanDefinitionStoreException, ASM ClassReader failed to parse class file 에러가 발생될 수 있다. 2014-09-19
+sourceCompatibility = 1.7
+
+repositories {
+   mavenCentral()
+}
+
+// dependency 버전 정보
+def version = [
+  junit: '4.11'
+, slf4j: '1.7.6'
+]
+
+//변수형 버전정보를 넣게되면 ""로 감싸야됨.. 2014-09-19
+dependencies {
+    compile "org.slf4j:slf4j-api:${version.slf4j}"
+    compile 'org.apache.solr:solr-solrj:4.6.1'
+	testCompile "junit:junit:${version.junit}"
+}
+
+version = '1.0'
+
+jar {
+	manifest.attributes provider: 'gradle'
+}

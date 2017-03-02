@@ -1,0 +1,58 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : spring-restful-api:kr.pe.nonstop.restfulapi : solrapi.war (exploded)">
+    <output-path>$PROJECT_DIR$/out/artifacts/kr.pe.nonstop.restfulapi/exploded/solrapi.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/kr.pe.nonstop.restfulapi" />
+    </properties>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="kr.pe.nonstop.restfulapi/web/Web Gradle : solrapi.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="kr.pe.nonstop.restfulapi" />
+          <element id="dir-copy" path="$PROJECT_DIR$/kr.pe.nonstop.restfulapi/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="spring-restful-api-kr.pe.nonstop.libs-unspecified.jar">
+            <element id="module-output" name="kr.pe.nonstop.libs" />
+            <element id="dir-copy" path="$PROJECT_DIR$/kr.pe.nonstop.libs/build/resources/main" />
+          </element>
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.6" />
+          <element id="library" level="project" name="Gradle: org.apache.solr:solr-solrj:4.6.1" />
+          <element id="library" level="project" name="Gradle: org.apache.zookeeper:zookeeper:3.4.5" />
+          <element id="library" level="project" name="Gradle: commons-io:commons-io:2.1" />
+          <element id="library" level="project" name="Gradle: org.noggit:noggit:0.5" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.2.6" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpmime:4.2.6" />
+          <element id="library" level="project" name="Gradle: org.codehaus.woodstox:wstx-asl:3.2.7" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.2.5" />
+          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.6" />
+          <element id="library" level="module" name="Gradle: arirang.lucene-analyzer-4.6-0.0.1-SNAPSHOT" module-name="kr.pe.nonstop.restfulapi" />
+          <element id="library" level="module" name="Gradle: sqljdbc4" module-name="kr.pe.nonstop.restfulapi" />
+          <element id="library" level="project" name="Gradle: org.codehaus.jackson:jackson-mapper-asl:1.9.12" />
+          <element id="library" level="project" name="Gradle: javax.xml.bind:jaxb-api:2.2.6" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis:3.2.3" />
+          <element id="library" level="project" name="Gradle: org.json:json:20140107" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:3.2.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis-spring:1.2.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: cglib:cglib-nodep:2.2.2" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.0.6" />
+          <element id="library" level="project" name="Gradle: org.codehaus.jackson:jackson-core-asl:1.9.12" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:3.2.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.0.6" />
+          <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/kr.pe.nonstop.restfulapi/exploded/solrapi.war/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

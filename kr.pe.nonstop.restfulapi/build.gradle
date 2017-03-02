@@ -1,0 +1,78 @@
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'jetty'
+
+// JAVA Version 1.7
+sourceCompatibility = 1.7
+// 개발한 애플리케이션 버전
+version = '1.0'
+war.archiveName "solrapi.war"
+
+// 메이븐 Central 저장소 사용
+repositories {
+    mavenCentral()
+}
+
+// dependency 버전 정보
+def version = [
+spring: '3.2.5.RELEASE'
+, junit: '4.11'
+, servletApi: '3.0.1'
+, jstl: '1.2'
+, slf4j: '1.7.6'
+, mockito: '1.9.0'
+, cglib: '2.2.2'
+, logback: '1.0.6'
+]
+
+// In this section you declare the dependencies for your production and test code
+// 의존성 설정
+//json의 경우 jackson-mapper-asl이 필요함.. core를 넣으면 동작안되넹.. ㅠㅠ
+dependencies {
+    runtime fileTree(dir: 'libs', include: '*.jar')
+    compile 'org.apache.solr:solr-solrj:4.6.1'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
+    compile 'javax.xml.bind:jaxb-api:2.2.6'
+    compile 'org.mybatis:mybatis:3.2.3'
+    compile 'org.json:json:20140107'
+    compile 'org.springframework:spring-jdbc:3.2.4.RELEASE'
+    compile 'org.mybatis:mybatis-spring:1.2.2'
+    
+    compile "org.springframework:spring-webmvc:${version.spring}",
+    		"cglib:cglib-nodep:${version.cglib}",
+    		"ch.qos.logback:logback-classic:${version.logback}", "org.slf4j:slf4j-api:${version.slf4j}"
+    		
+    compile project (':kr.pe.nonstop.libs')
+
+  	providedCompile "javax.servlet:javax.servlet-api:${version.servletApi}"
+
+  	testCompile "org.springframework:spring-test:${version.spring}",
+  			"junit:junit:${version.junit}",
+  			"org.mockito:mockito-core:${version.mockito}"
+
+  	runtime "javax.servlet:jstl:${version.jstl}"
+  	
+  	
+}
+
+// logback(slf4j)를 사용하기 때문에 모든 의존성에서 commons-logging는 제외
+[configurations.runtime, configurations.default]*.exclude(module: 'commons-logging')
+
+// JAVA 컴파일시 인코딩 설정
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+// TEST 설정
+test {
+    jvmArgs = ['-ea', '-Xmx256m']
+    logging.captureStandardOutput(LogLevel.INFO)
+}
+
+
+//로컬 웹서버로 배포
+
+task deploy(type: Copy) {
+    from war
+    into "/Users/netcrazy/IdeaProjects/spring-restful-api"
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace= "mapper" >
+
+	<!-- Data집합이 1개면 resultType="hashmap" 가능하나, 2개 이상일때는 resultMap을 사용한다. -->
+    <select id ="USP_TEST" parameterType="java.util.Map" resultMap="result1,result2" statementType="CALLABLE">
+		{ call dbo.USP_TEST(
+			#{Provider_Nm	, mode=IN,	jdbcType=VARCHAR,	javaType=string	},
+			#{Site_Nm		, mode=IN,	jdbcType=VARCHAR,	javaType=string	},
+			#{Svc_Nm		, mode=IN,	jdbcType=VARCHAR,	javaType=string	},
+			#{Flag_Cd		, mode=IN,	jdbcType=VARCHAR,	javaType=string	},
+			#{PageSize		, mode=IN,	jdbcType=INTEGER,	javaType=Integer},
+			#{PageNum		, mode=IN,	jdbcType=INTEGER,	javaType=Integer},
+			#{StartTm		, mode=IN,	jdbcType=VARCHAR,	javaType=string	},
+			#{EndTm			, mode=IN,	jdbcType=VARCHAR,	javaType=string	},
+			
+			#{ErrNum		, mode=OUT,	jdbcType=INTEGER,	javaType=Integer},
+			#{ErrSev		, mode=OUT, jdbcType=INTEGER,	javaType=Integer},
+			#{ErrState		, mode=OUT, jdbcType=INTEGER,	javaType=Integer},
+			#{ErrProc		, mode=OUT, jdbcType=VARCHAR,	javaType=string	},
+			#{ErrLine		, mode=OUT, jdbcType=INTEGER,	javaType=Integer},
+			#{ErrMsg		, mode=OUT, jdbcType=VARCHAR,	javaType=string	}
+		  )
+		}
+    </select> 
+    
+	<resultMap id="result1" type="Integer"></resultMap>	
+	<resultMap id="result2" type="kr.pe.nonstop.solr.vo.SyndicationArchiveVO">
+		<result property="providerNm" 	column="Provider_Nm" />
+		<result property="siteNm"		column="Site_Nm" />
+		<result property="svcNm"		column="Svc_Nm" />
+		<result property="itemNo"		column="Item_No" />
+		<result property="flagCd" 		column="Flag_Cd" />
+		<result property="info1" 		column="Info1" />
+		<result property="info2" 		column="Info2" />
+		<result property="info3" 		column="Info3" />
+		<result property="info4" 		column="Info4" />
+		<result property="info5" 		column="Info5" />
+		<result property="cont1" 		column="Cont1" />
+		<result property="cont2" 		column="Cont2" />
+		<result property="cont3" 		column="Cont3" />
+		<result property="cont4" 		column="Cont4" />
+		<result property="cont5" 		column="Cont5" />
+		<result property="regDate" 		column="Reg_Date" />
+		<result property="modDate" 		column="Mod_Date" />
+		<result property="createDate"	column="Create_Date" />
+	</resultMap>
+</mapper>

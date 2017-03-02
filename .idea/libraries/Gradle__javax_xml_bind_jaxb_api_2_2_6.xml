@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: javax.xml.bind:jaxb-api:2.2.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.6/71f434378f822b09a57174af6c75d37408687c57/jaxb-api-2.2.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.6/dd83a97bab49adb87efd1bf7e3f77c96d156969d/jaxb-api-2.2.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
