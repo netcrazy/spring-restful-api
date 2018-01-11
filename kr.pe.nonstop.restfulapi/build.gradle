@@ -1,11 +1,9 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'eclipse-wtp'
-apply plugin: 'jetty'
 
-// JAVA Version 1.7
-sourceCompatibility = 1.7
+// JAVA Version 1.8
+sourceCompatibility = 1.8
 // 개발한 애플리케이션 버전
 version = '1.0'
 war.archiveName "solrapi.war"
@@ -17,7 +15,7 @@ repositories {
 
 // dependency 버전 정보
 def version = [
-spring: '3.2.5.RELEASE'
+spring: '4.3.13.RELEASE'
 , junit: '4.11'
 , servletApi: '3.0.1'
 , jstl: '1.2'
@@ -35,10 +33,10 @@ dependencies {
     compile 'org.apache.solr:solr-solrj:4.6.1'
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
     compile 'javax.xml.bind:jaxb-api:2.2.6'
-    compile 'org.mybatis:mybatis:3.2.3'
+    compile 'org.mybatis:mybatis:3.4.5'
     compile 'org.json:json:20140107'
-    compile 'org.springframework:spring-jdbc:3.2.4.RELEASE'
-    compile 'org.mybatis:mybatis-spring:1.2.2'
+    compile 'org.springframework:spring-jdbc:4.3.13.RELEASE'
+    compile 'org.mybatis:mybatis-spring:1.3.1'
     
     compile "org.springframework:spring-webmvc:${version.spring}",
     		"cglib:cglib-nodep:${version.cglib}",
