@@ -30,7 +30,7 @@ public class HomeController extends BaseDao
 	@Autowired
     private SqlSession sqlSession;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces="application/json;charset=UTF-8")
 	public String home() {
 		return "redirect:job";
 	}
